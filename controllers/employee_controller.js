@@ -15,7 +15,6 @@ router.get('/:id', async (req, res) => {
     else
         res.send(employee)
 })
-
 router.delete('/:id', async (req, res) => {
     const affectedRows = await service.deleteEmployee(req.params.id)
     if (affectedRows == 0)
@@ -23,7 +22,6 @@ router.delete('/:id', async (req, res) => {
     else
         res.send('deleted successfully.')
 })
-
 router.post('/', async (req, res) => {
     await service.addOrEditEmployee(req.body)
     res.status(201).send('created successfully.')
