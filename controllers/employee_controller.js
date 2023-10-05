@@ -28,7 +28,6 @@ router.post('/', async (req, res) => {
     await service.addOrEditEmployee(req.body)
     res.status(201).send('created successfully.')
 })
-
 router.put('/:id', async (req, res) => {
     const affectedRows = await service.addOrEditEmployee(req.body, req.params.id)
     if (affectedRows == 0)
