@@ -1,6 +1,9 @@
 const express = require('express'),
     app = express();
-    const db = require('./db.js');
+    const db = require('./db.js'),
+    employeeRoutes = require('./controllers/employee_controller.js');
+
+    app.use('/api/employees', employeeRoutes);
 
     db.query("SELECT 1")
     .then(() => {
